@@ -17,7 +17,7 @@
 
 ---
 
-## 현재 구현 상태 (2026-04-21 기준)
+## 현재 구현 상태 (2026-04-25 기준)
 
 ### 완료된 것
 - `/english-address` — 영문주소 변환 메인 기능 (검색 → 결과 → 복사)
@@ -40,11 +40,22 @@
 - State → State / Province 라벨 변경
 - "해외 사이트 입력용" → "해외 사이트 입력"
 
+### 추가 완료 (2026-04-25)
+- GitHub 연결 (brianpage2/jusoen, private)
+- Vercel 배포 완료 (jusoen.co.kr 도메인 연결)
+- 도로명주소 검색 API + 영문주소 API 승인키 발급 및 연동
+- 지도제공 검색 API 승인키 발급 및 연동 (iframe 방식, CSS 충돌 방지)
+- 지도보기/접기 버튼 (ResultCard 인라인 확장)
+- 모바일 최적화 (폰트 16px/18px 분리, 헤더 언어토글 항상 표시, 레이아웃 개선)
+- City 필드 로직: 도(province)는 sggNm, 광역시는 siNm
+- Address Line 1에 emdNm(읍/면/동) 포함
+- 펼침 영역: 영문주소만 표시 (한글 행 제거), 메인카드 스타일 통일
+- 빨간 핀 아이콘(icon_loc.png) 커스텀 적용
+- 번호(1,2,3)가 카드 전체 높이에 걸쳐 표시
+
 ### 미완료 / 대기 중
-- `.env.local` — `JUSO_API_KEY`, `JUSO_ENG_API_KEY` 아직 미설정 (API 승인 대기)
-- GitHub remote 연결 안 됨
-- Vercel 배포 안 됨
-- API 신청 완료 여부 미확인
+- 영문 계좌 입력 서비스 (/bank-account) — 기획 완료, 구현 예정
+- Google AdSense 신청 (2~4주 후 권장)
 
 ---
 
