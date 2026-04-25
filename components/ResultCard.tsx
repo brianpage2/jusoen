@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import CopyButton from './CopyButton'
+import MapSection from './MapSection'
 import { JusoResult, AddressFormFields } from '@/lib/juso'
 import { useLang } from '@/lib/language-context'
 
@@ -68,6 +69,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
   const [expanded, setExpanded] = useState(index === 0)
   const [showGuide, setShowGuide] = useState(false)
   const [showAddrGuide, setShowAddrGuide] = useState(false)
+  const [showMap, setShowMap] = useState(false)
   const { lang } = useLang()
   const tx = t[lang]
   const engAddr = juso.engResult?.roadAddr ?? juso.engAddr
@@ -105,12 +107,21 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
               <span className="text-lg font-bold text-[#0D1B3E]">{juso.zipNo}</span>
               <CopyButton value={juso.zipNo} />
             </div>
-            <button
-              onClick={() => setExpanded(v => !v)}
-              className="self-center text-xs px-3 py-1.5 bg-[#1B6EBE] hover:bg-[#145A9E] text-white rounded font-medium transition-colors shrink-0"
-            >
-              {expanded ? tx.fold : tx.unfold}
-            </button>
+            <div className="flex flex-col gap-1.5 self-center">
+              <button
+                onClick={() => setExpanded(v => !v)}
+                className="text-xs px-3 py-1.5 bg-[#1B6EBE] hover:bg-[#145A9E] text-white rounded font-medium transition-colors shrink-0"
+              >
+                {expanded ? tx.fold : tx.unfold}
+              </button>
+              <button
+                onClick={() => setShowMap(v => !v)}
+                className="text-xs px-3 py-1.5 bg-[#F0F4F8] hover:bg-[#E2E8F0] text-[#1B2B6E] rounded font-medium transition-colors shrink-0 flex items-center justify-center gap-1"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                {showMap ? '지도접기' : '지도펼치기'}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -197,6 +208,16 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
             <Row label="Country" value={form.country} english />
           </div>
         </div>
+      )}
+
+      {showMap && (
+        <MapSection
+          admCd={juso.admCd}
+          rnMgtSn={juso.rnMgtSn}
+          udrtYn={juso.udrtYn}
+          buldMnnm={juso.buldMnnm}
+          buldSlno={juso.buldSlno}
+        />
       )}
     </div>
   )

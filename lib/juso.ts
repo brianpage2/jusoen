@@ -25,6 +25,9 @@ export interface JusoResult {
   bdNm: string
   buldMnnm: string
   buldSlno: string
+  admCd: string
+  rnMgtSn: string
+  udrtYn: string
   engResult: EngResult | null
 }
 
