@@ -69,7 +69,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
   const [expanded, setExpanded] = useState(index === 0)
   const [showGuide, setShowGuide] = useState(false)
   const [showAddrGuide, setShowAddrGuide] = useState(false)
-  const [showMap, setShowMap] = useState(false)
+  const [showMap, setShowMap] = useState(index === 0)
   const { lang } = useLang()
   const tx = t[lang]
   const engAddr = juso.engResult?.roadAddr ?? juso.engAddr

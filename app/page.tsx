@@ -4,8 +4,13 @@ import EnglishAddressClient from './english-address/EnglishAddressClient'
 const BASE_URL = 'https://jusoen.co.kr'
 
 export const metadata: Metadata = {
-  title: '영문 도로명주소 변환 및 복사',
-  description: '한글 주소를 영문 주소로 즉시 변환하고 복사하세요. Address Line 1, 2 등 해외 사이트 입력 양식에 바로 사용할 수 있습니다.',
+  title: '영문주소 변환 · 도로명주소 확인 · 우편번호 검색',
+  description: '한글 주소를 영문 도로명주소로 즉시 변환하세요. 도로명주소 확인, 우편번호 검색, Address Line 1·2 등 해외 사이트 입력 양식을 한 번에 복사할 수 있습니다.',
+  keywords: [
+    '영문주소 변환', '도로명주소 확인', '도로명주소 영문', '영문 도로명주소', '우편번호 검색',
+    '도로명 영문주소', '주소 영문 변환', '한글주소 영문', '해외배송 주소', '영문 주소 형식',
+    'Address Line 1', '해외 직구 주소', '지번주소 영문', '한국 주소 영어로',
+  ],
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: '영문 도로명주소 변환 및 복사 | Jusoen',
