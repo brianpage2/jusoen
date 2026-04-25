@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-2xl font-bold text-[#1A1A1A] mb-2">개인정보처리방침</h1>
-      <p className="text-xs text-[#5A6A7A] mb-8">최종 수정일: 2026년 4월 20일</p>
+      <p className="text-xs text-[#5A6A7A] mb-8">최종 수정일: 2026년 4월 25일</p>
 
       <div className="space-y-8 text-sm text-[#5A6A7A] leading-relaxed">
         <section>
@@ -76,6 +76,10 @@ export default function PrivacyPage() {
           <p>
             본 서비스는 주소 변환을 위해 대한민국 행정안전부의 공식 도로명주소 API를 사용합니다.
             검색 시 입력한 키워드는 주소 검색 목적으로만 해당 API 서버에 전달되며, 이 외의 용도로 사용되지 않습니다.
+          </p>
+          <p className="mt-2">
+            계좌정보 영문전환 서비스에서 입력하는 계좌번호 및 예금주명은 화면 표시 목적으로만 사용되며,
+            당사 서버에 저장되거나 외부로 전송되지 않습니다.
           </p>
           <p className="mt-2">
             수집된 정보는 어떠한 경우에도 제3자에게 판매되거나 임의로 제공되지 않습니다.

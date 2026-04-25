@@ -265,6 +265,24 @@ export default function EnglishAddressClient() {
             ))}
           </div>
       </div>
+
+      {/* 계좌정보 영문전환 내부 링크 */}
+      <div className="mt-10">
+        <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4">계좌정보 영문전환 서비스</h2>
+        <a href="/bank-account"
+          className="flex items-center gap-4 bg-white border border-[#D0DCE8] rounded-lg px-4 py-4 hover:bg-[#F5F7FA] transition-colors">
+          <div className="shrink-0 w-10 h-10 bg-[#EEF2FA] rounded-lg flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2B6E" strokeWidth="2">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            </svg>
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-[#1A1A1A]">한글 계좌정보 영문으로 전환</p>
+            <p className="text-xs text-[#5A6A7A] mt-0.5">SWIFT 코드, 영문 은행명, 영문 주소 — 해외 사이트 계좌 등록에 필요한 정보를 즉시 확인</p>
+          </div>
+          <svg className="shrink-0 text-[#B0BEC5]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </div>
     </>
   )
 }
