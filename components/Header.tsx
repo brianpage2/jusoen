@@ -24,13 +24,15 @@ export default function Header() {
             영문도로명주소
           </span>
         </Link>
-        <nav className="hidden sm:flex items-center gap-6">
-          <Link href="/about" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
-            서비스 소개
-          </Link>
-          <Link href="/english-address" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
-            이용방법
-          </Link>
+        <nav className="flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-6">
+            <Link href="/about" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
+              서비스 소개
+            </Link>
+            <Link href="/english-address" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
+              이용방법
+            </Link>
+          </div>
           <LanguageToggle />
         </nav>
       </div>

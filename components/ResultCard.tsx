@@ -75,12 +75,15 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
   const engAddr = juso.engResult?.roadAddr ?? juso.engAddr
 
   return (
-    <div className="bg-white border border-[#E2E8F0] rounded-lg overflow-hidden">
-      {/* 메인 행 */}
-      <div className="px-4 py-3">
-        <div className="flex items-stretch gap-0">
-          <span className="text-base font-bold text-[#1B2B6E] w-7 shrink-0 flex items-center justify-center">{index + 1}</span>
+    <div className="bg-white border border-[#E2E8F0] rounded-lg overflow-hidden flex">
+      {/* 번호 - 전체 높이 */}
+      <span className="text-base font-bold text-[#1B2B6E] w-7 shrink-0 flex items-start justify-center pt-4 border-r border-[#E2E8F0]">{index + 1}</span>
 
+      {/* 콘텐츠 전체 */}
+      <div className="flex-1 min-w-0">
+      {/* 메인 행 */}
+      <div className="px-3 py-3">
+        <div className="flex items-stretch gap-0">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
               <span className="shrink-0 text-xs bg-[#1B2B6E] text-white px-2 text-center py-0.5 rounded font-semibold" style={{ minWidth: lang === 'en' ? '96px' : '68px' }}>{tx.roadAddr}</span>
@@ -99,9 +102,31 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
               <span className="text-base text-[#374151] leading-snug">{juso.jibunAddr}</span>
               <CopyButton value={juso.jibunAddr} />
             </div>
+            {/* 모바일: 우편번호 + 버튼 행 */}
+            <div className="flex sm:hidden items-center gap-2 pt-2 px-1">
+              <span className="text-xs text-[#6B7280]">{tx.zipNo}</span>
+              <span className="text-sm font-bold text-[#0D1B3E]">{juso.zipNo}</span>
+              <CopyButton value={juso.zipNo} />
+              <div className="ml-auto flex gap-1.5">
+                <button
+                  onClick={() => setExpanded(v => !v)}
+                  className="text-xs px-2.5 py-1 bg-[#1B6EBE] hover:bg-[#145A9E] text-white rounded font-medium transition-colors"
+                >
+                  {expanded ? tx.fold : tx.unfold}
+                </button>
+                <button
+                  onClick={() => setShowMap(v => !v)}
+                  className="text-xs px-2.5 py-1 bg-[#F0F4F8] hover:bg-[#E2E8F0] text-[#1B2B6E] rounded font-medium transition-colors flex items-center gap-1"
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {showMap ? '지도접기' : '지도펼치기'}
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="shrink-0 flex items-stretch gap-3 pl-3">
+          {/* 데스크탑: 우편번호 + 버튼 */}
+          <div className="hidden sm:flex shrink-0 items-stretch gap-3 pl-3">
             <div className="flex flex-col items-center justify-center gap-1 bg-[#EEF2FA] px-3 rounded">
               <span className="text-xs text-[#6B7280]">{tx.zipNo}</span>
               <span className="text-lg font-bold text-[#0D1B3E]">{juso.zipNo}</span>
@@ -128,14 +153,14 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
 
       {/* 펼침 영역 */}
       {expanded && (
-        <div className="border-t border-[#E2E8F0] bg-white px-4 py-4 space-y-4">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold text-[#1B2B6E] bg-[#EEF2FA] px-3 py-1.5 rounded">{tx.expandedRoad}</p>
-            <Row label={tx.korean} value={juso.roadAddr} />
+        <div className="border-t border-[#E2E8F0] bg-white px-3 py-4 space-y-4">
+          <div>
             {engAddr && (
               <>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <Row label={tx.english} value={engAddr} english />
+                <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
+                  <span className="shrink-0 text-xs bg-[#1B2B6E] text-white px-2 py-0.5 rounded font-semibold">{tx.expandedRoad}</span>
+                  <span className="text-base font-[Inter] text-[#0D1B3E] font-bold leading-snug">{engAddr}</span>
+                  <CopyButton value={engAddr} />
                   <button
                     onClick={() => setShowGuide(v => !v)}
                     className="text-xs text-[#1B6EBE] hover:underline shrink-0 whitespace-nowrap"
@@ -144,7 +169,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
                   </button>
                 </div>
                 {showGuide && (
-                  <div className="mt-2 ml-32 bg-[#F5F7FA] rounded-lg p-4 space-y-4 border border-[#E2E8F0]">
+                  <div className="bg-[#F5F7FA] px-4 py-4 space-y-4 border-x border-[#D8E0F0]">
                     <p className="text-xs font-semibold text-[#1A1A1A]">상세주소(동,층,호)를 포함한 영문 우편주소 표기방법 안내</p>
                     {guideTypes.map(({ label, title, desc, example }) => (
                       <div key={label} className="flex gap-3">
@@ -160,12 +185,13 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
                 )}
               </>
             )}
-          </div>
-          <div className="border-t border-[#E2E8F0]" />
-          <div className="space-y-2">
-            <p className="text-sm font-semibold text-[#1B2B6E] bg-[#EEF2FA] px-3 py-1.5 rounded">{tx.expandedJibun}</p>
-            <Row label={tx.korean} value={juso.jibunAddr} />
-            {juso.engResult?.jibunAddr && <Row label={tx.english} value={juso.engResult.jibunAddr} english />}
+            {juso.engResult?.jibunAddr && (
+              <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
+                <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] px-2 py-0.5 rounded font-semibold">{tx.expandedJibun}</span>
+                <span className="text-base font-[Inter] text-[#374151] leading-snug">{juso.engResult.jibunAddr}</span>
+                <CopyButton value={juso.engResult.jibunAddr} />
+              </div>
+            )}
           </div>
           <div className="border-t border-[#E2E8F0]" />
           <div className="space-y-2">
@@ -219,6 +245,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
           buldSlno={juso.buldSlno}
         />
       )}
+      </div>
     </div>
   )
 }
