@@ -29,6 +29,9 @@ export default function Header() {
             <Link href="/about" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
               서비스 소개
             </Link>
+            <Link href="/bank-account" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
+              계좌정보 영문전환
+            </Link>
             <Link href="/english-address" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
               이용방법
             </Link>
