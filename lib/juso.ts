@@ -57,12 +57,15 @@ function parseEngAddr(engAddr: string): { addressLine1: string; city: string; st
 
 export function toAddressForm(juso: JusoResult): AddressFormFields {
   if (juso.engResult) {
-    const { siNm, sggNm, rn, buldMnnm, buldSlno } = juso.engResult
+    const { siNm, sggNm, emdNm, rn, buldMnnm, buldSlno } = juso.engResult
     const buildingNo = buldSlno !== '0' ? `${buldMnnm}-${buldSlno}` : buldMnnm
+    const isProvince = siNm.endsWith('-do')
+    const city = isProvince ? (sggNm || siNm) : siNm
+    const addrParts = [rn, emdNm, sggNm].filter(Boolean)
     return {
-      addressLine1: `${buildingNo} ${rn}, ${sggNm}`,
+      addressLine1: `${buildingNo} ${addrParts.join(', ')}`,
       addressLine2: juso.bdNm || '',
-      city: sggNm,
+      city,
       state: siNm,
       zipCode: juso.zipNo,
       country: 'South Korea',

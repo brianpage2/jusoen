@@ -28,19 +28,19 @@ const guideTypes = [
     label: '유형1',
     title: '"동"과 "호" 표기',
     desc: '주소가 "세종특별자치시 도움6로 42"이고 "705동 1104호"인 경우',
-    example: '705-1104, 42Doum 6-ro, Sejong-si, 30112, Republic of Korea',
+    example: '705-1104, 42Doum 6-ro, Sejong-si, Republic of Korea',
   },
   {
     label: '유형2',
     title: '"층" 표기',
     desc: '주소가 "세종특별자치시 도움6로 42"이고 "3층"인 경우',
-    example: '3F, 42Doum 6-ro, Sejong-si, 30112, Republic of Korea',
+    example: '3F, 42Doum 6-ro, Sejong-si, Republic of Korea',
   },
   {
     label: '유형3',
     title: '"지하" 표기',
     desc: '주소가 "세종특별자치시 도움6로 42"이고 "지하102"인 경우',
-    example: 'B102, 42Doum 6-ro, Sejong-si, 30112, Republic of Korea',
+    example: 'B102, 42Doum 6-ro, Sejong-si, Republic of Korea',
   },
 ]
 
@@ -266,57 +266,59 @@ function Row({ label, value, english }: { label: string; value: string; english?
 
 export function ResultCardSkeleton() {
   return (
-    <div className="bg-white border border-[#E2E8F0] rounded-lg overflow-hidden pointer-events-none select-none">
-      {/* 메인 행 */}
-      <div className="px-4 py-3">
-        <div className="flex items-stretch gap-0">
-          <span className="text-base font-bold text-[#1B2B6E] w-7 shrink-0 flex items-center justify-center">1</span>
+    <div className="bg-white border border-[#E2E8F0] rounded-lg overflow-hidden pointer-events-none select-none flex">
+      {/* 번호 */}
+      <span className="text-base font-bold text-[#1B2B6E] w-7 shrink-0 flex items-start justify-center pt-4 border-r border-[#E2E8F0]">1</span>
 
-          <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0">
+        {/* 메인 행 */}
+        <div className="px-3 py-3">
+          <div className="flex items-stretch gap-0">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
+                <span className="shrink-0 text-xs bg-[#1B2B6E] text-white w-[68px] text-center py-0.5 rounded font-semibold">도로명주소</span>
+                <span className="text-sm text-[#C0CDD8]">여기에 표시됩니다</span>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
+                <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] w-[68px] text-center py-0.5 rounded font-semibold tracking-[0.4em] pl-[0.4em]">지번</span>
+                <span className="text-sm text-[#C0CDD8]">여기에 표시됩니다</span>
+              </div>
+            </div>
+            <div className="hidden sm:flex shrink-0 items-stretch gap-3 pl-3">
+              <div className="flex flex-col items-center justify-center gap-1 bg-[#EEF2FA] px-3 rounded">
+                <span className="text-xs text-[#6B7280]">우편번호</span>
+                <div className="w-12 h-5 bg-[#D0DCE8] rounded animate-pulse" />
+              </div>
+              <div className="flex flex-col gap-1.5 self-center">
+                <div className="text-xs px-3 py-1.5 bg-[#1B6EBE] text-white rounded font-medium opacity-40">+ 영문펼치기</div>
+                <div className="text-xs px-3 py-1.5 bg-[#F0F4F8] text-[#1B2B6E] rounded font-medium opacity-40">지도펼치기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 펼침 미리보기 */}
+        <div className="border-t border-[#E2E8F0] bg-white px-3 py-4 space-y-4">
+          <div>
             <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
-              <span className="shrink-0 text-xs bg-[#1B2B6E] text-white w-[68px] text-center py-0.5 rounded font-semibold">도로명주소</span>
-              <span className="text-sm text-[#C0CDD8]">여기에 표시됩니다</span>
+              <span className="shrink-0 text-xs bg-[#1B2B6E] text-white px-2 py-0.5 rounded font-semibold">도로명주소</span>
+              <span className="text-sm text-[#C0CDD8]">영문 주소는 여기에 표시됩니다.</span>
             </div>
             <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
-              <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] w-[68px] text-center py-0.5 rounded font-semibold tracking-[0.4em] pl-[0.4em]">지번</span>
-              <span className="text-sm text-[#C0CDD8]">여기에 표시됩니다</span>
+              <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] px-2 py-0.5 rounded font-semibold">지번주소</span>
+              <span className="text-sm text-[#C0CDD8]">영문 주소는 여기에 표시됩니다.</span>
             </div>
           </div>
-
-          <div className="shrink-0 flex items-stretch gap-3 pl-3">
-            <div className="flex flex-col items-center justify-center gap-1 bg-[#EEF2FA] px-3 rounded">
-              <span className="text-xs text-[#6B7280]">우편번호</span>
-              <div className="w-12 h-5 bg-[#D0DCE8] rounded animate-pulse" />
-            </div>
-            <div className="self-center text-xs px-3 py-1.5 bg-[#1B6EBE] text-white rounded font-medium opacity-40 shrink-0">
-              + 영문펼치기
-            </div>
+          <div className="border-t border-[#E2E8F0]" />
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-[#1B2B6E] bg-[#EEF2FA] px-3 py-1.5 rounded">해외 사이트 입력</p>
+            <SkeletonRow label="Address Line 1" />
+            <SkeletonRow label="Address Line 2" />
+            <SkeletonRow label="City" />
+            <SkeletonRow label="State / Province" />
+            <SkeletonRow label="ZIP Code" />
+            <SkeletonRow label="Country" />
           </div>
-        </div>
-      </div>
-
-      {/* 펼침 미리보기 */}
-      <div className="border-t border-[#E2E8F0] bg-white px-4 py-4 space-y-4">
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-[#1B2B6E] bg-[#EEF2FA] px-3 py-1.5 rounded">도로명주소</p>
-          <SkeletonRow label="한글" />
-          <SkeletonRow label="영문" />
-        </div>
-        <div className="border-t border-[#E2E8F0]" />
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-[#1B2B6E] bg-[#EEF2FA] px-3 py-1.5 rounded">지번주소</p>
-          <SkeletonRow label="한글" />
-          <SkeletonRow label="영문" />
-        </div>
-        <div className="border-t border-[#E2E8F0]" />
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-[#1B2B6E] bg-[#EEF2FA] px-3 py-1.5 rounded">해외 사이트 입력</p>
-          <SkeletonRow label="Address Line 1" />
-          <SkeletonRow label="Address Line 2" />
-          <SkeletonRow label="City" />
-          <SkeletonRow label="State / Province" />
-          <SkeletonRow label="ZIP Code" />
-          <SkeletonRow label="Country" />
         </div>
       </div>
     </div>
