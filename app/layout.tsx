@@ -8,6 +8,7 @@ const BASE_URL = 'https://jusoen.co.kr'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  verification: { google: 'sUDulrk0-heiH_j-nS7wqQ3WMEqSuSCY9BdtiTrB8PE' },
   title: {
     default: '영문주소 변환 - 한글 주소를 영문으로 즉시 변환 | Jusoen',
     template: '%s | Jusoen',
