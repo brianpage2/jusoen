@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     'SWIFT 코드', '한국 SWIFT 코드', '카카오뱅크 SWIFT', '계좌정보 영문', 'IBAN 한국',
     '은행 영문명', 'BIC 코드', '해외 계좌 등록', '해외송금 정보',
   ],
-  alternates: { canonical: BASE_URL },
   openGraph: {
     title: '영문주소 변환 | Jusoen',
     description: '한글 주소를 영문 주소로 즉시 변환하고 복사하세요.',
@@ -44,7 +43,7 @@ const websiteJsonLd = {
   description: '영문주소 변환, SWIFT 코드 조회, 계좌정보 영문전환을 한 곳에서 제공하는 무료 서비스',
   potentialAction: {
     '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/english-address?q={search_term_string}` },
+    target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/?q={search_term_string}` },
     'query-input': 'required name=search_term_string',
   },
 }

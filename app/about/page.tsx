@@ -79,10 +79,10 @@ export default function AboutPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
       <main className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-bold text-[#1A1A1A] mb-1">서비스 소개</h1>
-      <p className="text-sm text-[#5A6A7A] mb-10">jusoen.co.kr — 해외 서비스에 필요한 한국 영문 정보를 한 번에</p>
+        <h1 className="text-2xl font-bold text-[#1A1A1A] mb-1">서비스 소개</h1>
+        <p className="text-sm text-[#5A6A7A] mb-10">jusoen.co.kr — 해외 서비스에 필요한 한국 영문 정보를 한 번에</p>
 
-      <div className="space-y-10 text-sm text-[#5A6A7A] leading-relaxed">
+        <div className="space-y-10 text-sm text-[#5A6A7A] leading-relaxed">
 
         {/* 서비스 개요 */}
         <section>
@@ -182,8 +182,9 @@ export default function AboutPage() {
             <p><strong className="text-[#1A1A1A]">URL</strong>: <a href="https://jusoen.co.kr" className="text-[#1B6EBE] hover:underline">https://jusoen.co.kr</a></p>
           </div>
         </section>
-      </div>
+        </div>
       </main>
     </>
   )
 }
+

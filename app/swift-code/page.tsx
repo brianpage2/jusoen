@@ -56,6 +56,16 @@ const faqJsonLd = {
       name: '잘못된 SWIFT 코드를 입력하면 어떻게 되나요?',
       acceptedAnswer: { '@type': 'Answer', text: '송금이 지연되거나 반송될 수 있으며, 반송 처리 과정에서 추가 수수료가 발생할 수 있습니다. 반드시 은행 공식 사이트에서 최신 코드를 확인 후 입력하세요.' },
     },
+    {
+      '@type': 'Question',
+      name: '은행 SWIFT 코드는 어디서 공식 확인하나요?',
+      acceptedAnswer: { '@type': 'Answer', text: '각 은행 공식 홈페이지 해외 송금 안내 페이지, 인터넷 뱅킹의 해외 송금 메뉴, 또는 은행 고객센터에 문의하면 확인할 수 있습니다. 중요한 거래 전에는 반드시 공식 채널에서 재확인하세요.' },
+    },
+    {
+      '@type': 'Question',
+      name: '증권사·자산운용사도 SWIFT 코드가 있나요?',
+      acceptedAnswer: { '@type': 'Answer', text: '네. SWIFT 코드는 은행뿐 아니라 증권사, 자산운용사 등 SWIFT 네트워크에 연결된 모든 금융기관에 부여됩니다. 이 서비스에서 245개 한국 금융기관의 SWIFT 코드를 카테고리별로 조회할 수 있습니다.' },
+    },
   ],
 }
 
