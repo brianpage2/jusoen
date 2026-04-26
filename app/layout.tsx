@@ -14,11 +14,12 @@ export const metadata: Metadata = {
   },
   description: '한글 주소를 영문 도로명주소로 즉시 변환하고 복사하세요. 해외 사이트 가입, 국제 배송, 서류 작성에 필요한 Address Line 1, 2, City, State, ZIP 형식으로 제공합니다.',
   keywords: [
-    '영문주소 변환', '한글주소 영문변환', '영문 도로명주소', '도로명주소 확인', '도로명주소 영문',
-    '영문주소', '한국주소 영어', '우편번호 검색', '도로명 영문주소', '주소 영문 변환',
-    '해외배송 주소', 'Address Line 1', '해외 직구 주소', '영문 주소 형식',
-    'SWIFT 코드', '한국 SWIFT 코드', '카카오뱅크 SWIFT', '계좌정보 영문', 'IBAN 한국',
-    '은행 영문명', 'BIC 코드', '해외 계좌 등록', '해외송금 정보',
+    '영문주소 변환', '한글 주소 영어로', '도로명주소 영문', '영문 도로명주소', '우편번호 검색',
+    '아마존 배송 주소 영문', '해외 직구 영문 주소', '이베이 주소 입력', '비자 영문주소',
+    'Address Line 1 한국', '해외배송 주소', '국제배송 주소', 'EMS 영문주소',
+    'SWIFT 코드 조회', '한국 SWIFT 코드', '은행 SWIFT 코드', 'BIC 코드',
+    '계좌정보 영문전환', 'Google AdSense 계좌 등록', 'PayPal 계좌 등록',
+    '해외 사이트 계좌 등록', '한국 은행 영문명', 'IBAN 한국',
   ],
   openGraph: {
     title: '영문주소 변환 | Jusoen',
@@ -30,9 +31,10 @@ export const metadata: Metadata = {
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen' }],
   },
   twitter: {
-    card: 'summary',
-    title: '영문주소 변환 | Jusoen',
-    description: '한글 주소를 영문 주소로 즉시 변환하고 복사하세요.',
+    card: 'summary_large_image',
+    title: '영문주소 변환 · SWIFT 코드 조회 | Jusoen',
+    description: '한글 주소를 영문으로 즉시 변환. 한국 SWIFT 코드 조회. 계좌정보 영문전환.',
+    images: ['/og-image.png'],
   },
 }
 

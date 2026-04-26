@@ -4,20 +4,27 @@ import BankAccountClient from './BankAccountClient'
 const BASE_URL = 'https://jusoen.co.kr'
 
 export const metadata: Metadata = {
-  title: '한국 은행 SWIFT 코드 조회 · 계좌정보 영문전환',
-  description: 'KB국민은행, 신한, 우리, 하나, 카카오뱅크 등 한국 은행 SWIFT 코드와 영문 은행명을 즉시 확인하세요. Google AdSense, PayPal 등 해외 사이트 계좌 등록에 필요한 정보를 한 번에 복사할 수 있습니다.',
-  keywords: ['SWIFT 코드', 'BIC 코드', '한국 은행 SWIFT', '카카오뱅크 SWIFT', '국민은행 SWIFT', '계좌정보 영문', '해외 계좌 등록', 'IBAN 한국'],
+  title: '계좌정보 영문전환 · 해외 사이트 은행 계좌 등록',
+  description: 'KB국민은행, 신한, 우리, 하나, 카카오뱅크 등 한국 은행 계좌정보를 영문으로 즉시 전환하세요. Google AdSense, PayPal, 아마존 등 해외 사이트 계좌 등록 시 필요한 Bank Name, SWIFT 코드, Bank Address를 한 번에 복사할 수 있습니다.',
+  keywords: [
+    '계좌정보 영문전환', '한국 은행 영문', '해외 사이트 계좌 등록', '해외 계좌 입력',
+    'Google AdSense 계좌 등록', 'PayPal 계좌 등록', '은행 영문명', 'IBAN 한국',
+    '국민은행 영문', '신한은행 영문', '카카오뱅크 영문', '해외 송금 계좌',
+    'Bank Name 영문', 'Bank Address 한국', '해외 계좌 정보',
+  ],
   alternates: { canonical: `${BASE_URL}/bank-account` },
   openGraph: {
-    title: '한국 은행 SWIFT 코드 조회 · 계좌정보 영문전환 | Jusoen',
-    description: 'KB국민은행, 신한, 우리, 하나, 카카오뱅크 SWIFT 코드와 영문 계좌 정보를 즉시 확인하고 복사하세요.',
+    title: '계좌정보 영문전환 · 해외 사이트 계좌 등록 | Jusoen',
+    description: '한국 은행 계좌정보를 영문으로 즉시 전환. Google AdSense·PayPal 계좌 등록에 필요한 모든 정보를 한 번에.',
     url: `${BASE_URL}/bank-account`,
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen 계좌정보 영문전환' }],
   },
   twitter: {
-    card: 'summary',
-    title: '한국 은행 SWIFT 코드 조회 | Jusoen',
-    description: '한국 은행 SWIFT 코드와 영문 계좌 정보를 바로 확인하고 복사하세요.',
+    card: 'summary_large_image',
+    title: '계좌정보 영문전환 · 해외 사이트 계좌 등록 | Jusoen',
+    description: '한국 은행 계좌정보를 영문으로 즉시 전환. Google AdSense·PayPal 계좌 등록에 필요한 모든 정보를 한 번에.',
+    images: ['/og-image.png'],
   },
 }
 

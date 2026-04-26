@@ -4,20 +4,28 @@ import SwiftCodeClient from './SwiftCodeClient'
 const BASE_URL = 'https://jusoen.co.kr'
 
 export const metadata: Metadata = {
-  title: '한국 SWIFT 코드 조회 · BIC 코드 검색',
-  description: 'KB국민은행, 신한, 우리, 하나, 카카오뱅크 등 한국 245개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하고 복사하세요. 은행명·영문명·코드 검색 지원.',
-  keywords: ['SWIFT 코드', 'BIC 코드', '한국 SWIFT 코드 조회', '은행 SWIFT 검색', '국민은행 SWIFT', '신한은행 SWIFT', '카카오뱅크 SWIFT'],
+  title: '한국 SWIFT 코드 조회 · BIC 코드 검색 · 245개 금융기관',
+  description: 'KB국민은행 CZNBKRSE, 신한은행 SHBKKRSE, 카카오뱅크 KAKOKR22 등 한국 245개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하고 복사하세요. 국내은행·인터넷은행·외국계은행·증권사 모두 포함.',
+  keywords: [
+    'SWIFT 코드 조회', 'BIC 코드', '한국 SWIFT 코드', '은행 SWIFT 코드',
+    '국민은행 SWIFT 코드', '신한은행 SWIFT 코드', '카카오뱅크 SWIFT 코드',
+    '하나은행 SWIFT', '우리은행 SWIFT', '기업은행 SWIFT', '농협은행 SWIFT',
+    '토스뱅크 SWIFT', '케이뱅크 SWIFT', 'SWIFT 코드 확인', 'BIC 코드 검색',
+    '해외송금 SWIFT', '한국 BIC 코드',
+  ],
   alternates: { canonical: `${BASE_URL}/swift-code` },
   openGraph: {
-    title: '한국 SWIFT 코드 조회 | Jusoen',
-    description: '한국 245개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
+    title: '한국 SWIFT 코드 조회 · 245개 금융기관 | Jusoen',
+    description: '국민·신한·카카오뱅크 등 한국 245개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
     url: `${BASE_URL}/swift-code`,
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen SWIFT 코드 조회' }],
   },
   twitter: {
-    card: 'summary',
-    title: '한국 SWIFT 코드 조회 | Jusoen',
-    description: '한국 245개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
+    card: 'summary_large_image',
+    title: '한국 SWIFT 코드 조회 · 245개 금융기관 | Jusoen',
+    description: '국민·신한·카카오뱅크 등 한국 245개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
+    images: ['/og-image.png'],
   },
 }
 
