@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     other: { 'naver-site-verification': '42fa1d44e8be189499dd9704f01c9824c8d07234' },
   },
   title: {
-    default: '영문주소 변환 - 한글 주소를 영문으로 즉시 변환 | Jusoen',
+    default: '영문주소 변환 · 도로명주소 확인 | Jusoen',
     template: '%s | Jusoen',
   },
   description: '한글 주소를 영문 도로명주소로 즉시 변환하고 복사하세요. 해외 사이트 가입, 국제 배송, 서류 작성에 필요한 Address Line 1, 2, City, State, ZIP 형식으로 제공합니다.',

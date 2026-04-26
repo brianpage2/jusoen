@@ -90,7 +90,10 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <main className="max-w-3xl mx-auto px-4 py-12">
         <h1 className="text-2xl font-bold text-[#1A1A1A] mb-1">서비스 소개</h1>
-        <p className="text-sm text-[#5A6A7A] mb-10">jusoen.co.kr — 해외 서비스에 필요한 한국 영문 정보를 한 번에</p>
+        <div className="flex items-center gap-3 mb-10">
+          <p className="text-sm text-[#5A6A7A]">jusoen.co.kr — 해외 서비스에 필요한 한국 영문 정보를 한 번에</p>
+          <span className="text-xs text-[#9CA3AF] shrink-0">최종 업데이트: 2026.04.26</span>
+        </div>
 
         <div className="space-y-10 text-sm text-[#5A6A7A] leading-relaxed">
 
@@ -189,6 +192,8 @@ export default function AboutPage() {
             <p><strong className="text-[#1A1A1A]">서비스명</strong>: Jusoen (jusoen.co.kr)</p>
             <p><strong className="text-[#1A1A1A]">운영자</strong>: Brian Page</p>
             <p><strong className="text-[#1A1A1A]">이메일</strong>: brianpage.kr@gmail.com</p>
+            <p><strong className="text-[#1A1A1A]">서비스 시작</strong>: 2026년 4월</p>
+            <p><strong className="text-[#1A1A1A]">데이터 출처</strong>: 대한민국 행정안전부 공식 도로명주소 API, theswiftcodes.com</p>
             <p><strong className="text-[#1A1A1A]">URL</strong>: <a href="https://jusoen.co.kr" className="text-[#1B6EBE] hover:underline">https://jusoen.co.kr</a></p>
           </div>
         </section>

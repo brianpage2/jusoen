@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import CopyButton from '@/components/CopyButton'
 import { SWIFT_CODES_KR } from '@/lib/swift-codes-kr'
 
@@ -196,6 +197,20 @@ export default function SwiftCodeClient() {
               </details>
             ))}
           </div>
+        </div>
+
+        {/* 관련 서비스 링크 */}
+        <div className="bg-[#EEF2FA] border border-[#D0DCE8] rounded-lg px-5 py-4 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-[#1B2B6E]">계좌정보 영문전환</p>
+            <p className="text-xs text-[#5A6A7A] mt-0.5">은행 선택만 하면 SWIFT 코드·영문 은행명·주소를 한 번에 확인하고 복사할 수 있습니다.</p>
+          </div>
+          <Link
+            href="/bank-account"
+            className="shrink-0 text-sm px-4 py-2 bg-[#1B6EBE] hover:bg-[#145A9E] text-white rounded-lg font-medium transition-colors whitespace-nowrap"
+          >
+            바로가기 →
+          </Link>
         </div>
 
       </section>
