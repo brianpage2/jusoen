@@ -77,11 +77,21 @@ const faqJsonLd = {
   ],
 }
 
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '홈', item: BASE_URL },
+    { '@type': 'ListItem', position: 2, name: 'SWIFT 코드 조회', item: `${BASE_URL}/swift-code` },
+  ],
+}
+
 export default function SwiftCodePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <main className="max-w-4xl mx-auto px-4 py-8">
         <SwiftCodeClient />
       </main>

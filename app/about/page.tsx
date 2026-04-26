@@ -74,10 +74,20 @@ const aboutJsonLd = {
   },
 }
 
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '홈', item: BASE_URL },
+    { '@type': 'ListItem', position: 2, name: '서비스 소개', item: `${BASE_URL}/about` },
+  ],
+}
+
 export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <main className="max-w-3xl mx-auto px-4 py-12">
         <h1 className="text-2xl font-bold text-[#1A1A1A] mb-1">서비스 소개</h1>
         <p className="text-sm text-[#5A6A7A] mb-10">jusoen.co.kr — 해외 서비스에 필요한 한국 영문 정보를 한 번에</p>

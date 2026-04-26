@@ -20,8 +20,19 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '홈', item: BASE_URL },
+    { '@type': 'ListItem', position: 2, name: '개인정보처리방침', item: `${BASE_URL}/privacy` },
+  ],
+}
+
 export default function PrivacyPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     <main className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-2xl font-bold text-[#1A1A1A] mb-2">개인정보처리방침</h1>
       <p className="text-xs text-[#5A6A7A] mb-8">최종 수정일: 2026년 4월 25일</p>
@@ -147,5 +158,6 @@ export default function PrivacyPage() {
         </section>
       </div>
     </main>
+    </>
   )
 }
