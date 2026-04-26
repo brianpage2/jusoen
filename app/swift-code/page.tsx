@@ -1,0 +1,72 @@
+import type { Metadata } from 'next'
+import SwiftCodeClient from './SwiftCodeClient'
+
+const BASE_URL = 'https://jusoen.co.kr'
+
+export const metadata: Metadata = {
+  title: '한국 SWIFT 코드 조회 · BIC 코드 검색',
+  description: 'KB국민은행, 신한, 우리, 하나, 카카오뱅크 등 한국 245개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하고 복사하세요. 은행명·영문명·코드 검색 지원.',
+  keywords: ['SWIFT 코드', 'BIC 코드', '한국 SWIFT 코드 조회', '은행 SWIFT 검색', '국민은행 SWIFT', '신한은행 SWIFT', '카카오뱅크 SWIFT'],
+  alternates: { canonical: `${BASE_URL}/swift-code` },
+  openGraph: {
+    title: '한국 SWIFT 코드 조회 | Jusoen',
+    description: '한국 245개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
+    url: `${BASE_URL}/swift-code`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '한국 SWIFT 코드 조회 | Jusoen',
+    description: '한국 245개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
+  },
+}
+
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Jusoen SWIFT 코드 조회',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  url: `${BASE_URL}/swift-code`,
+  description: '한국 245개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하는 무료 웹 서비스',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
+}
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'SWIFT 코드와 BIC 코드는 같은 건가요?',
+      acceptedAnswer: { '@type': 'Answer', text: '네, 동일한 코드입니다. SWIFT는 Society for Worldwide Interbank Financial Telecommunication의 약자이고, BIC는 Bank Identifier Code의 약자입니다. 국제 금융 거래 시 은행을 식별하는 8~11자리 코드를 가리킵니다.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'SWIFT 코드 8자리와 11자리의 차이는?',
+      acceptedAnswer: { '@type': 'Answer', text: '8자리는 은행 본점을 나타내고, 11자리는 특정 지점을 나타냅니다. 마지막 3자리가 XXX이면 본점을 의미합니다. 일반 해외 송금 시 8자리 코드를 사용해도 무방합니다.' },
+    },
+    {
+      '@type': 'Question',
+      name: '한국은 IBAN을 사용하나요?',
+      acceptedAnswer: { '@type': 'Answer', text: '아니요. 한국은 IBAN을 사용하지 않습니다. 해외 송금 시 IBAN란은 비워두거나 N/A를 입력하고, 계좌번호와 SWIFT 코드를 함께 입력하세요.' },
+    },
+    {
+      '@type': 'Question',
+      name: '잘못된 SWIFT 코드를 입력하면 어떻게 되나요?',
+      acceptedAnswer: { '@type': 'Answer', text: '송금이 지연되거나 반송될 수 있으며, 반송 처리 과정에서 추가 수수료가 발생할 수 있습니다. 반드시 은행 공식 사이트에서 최신 코드를 확인 후 입력하세요.' },
+    },
+  ],
+}
+
+export default function SwiftCodePage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <SwiftCodeClient />
+      </main>
+    </>
+  )
+}

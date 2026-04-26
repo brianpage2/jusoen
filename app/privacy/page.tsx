@@ -1,8 +1,23 @@
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://jusoen.co.kr'
+
 export const metadata: Metadata = {
   title: '개인정보처리방침 | Jusoen',
-  description: 'Jusoen 개인정보처리방침입니다.',
+  description: 'Jusoen(jusoen.co.kr) 개인정보처리방침입니다. 수집 정보, 쿠키 정책, Google AdSense 광고 및 제3자 서비스 이용에 관한 안내를 확인하세요.',
+  keywords: ['개인정보처리방침', 'jusoen 개인정보', '쿠키 정책', 'Google AdSense 개인정보'],
+  alternates: { canonical: `${BASE_URL}/privacy` },
+  openGraph: {
+    title: '개인정보처리방침 | Jusoen',
+    description: 'Jusoen 서비스의 개인정보 수집·이용·보호 방침을 안내합니다.',
+    url: `${BASE_URL}/privacy`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '개인정보처리방침 | Jusoen',
+    description: 'Jusoen 서비스의 개인정보 수집·이용·보호 방침을 안내합니다.',
+  },
 }
 
 export default function PrivacyPage() {

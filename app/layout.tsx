@@ -41,7 +41,7 @@ const websiteJsonLd = {
   '@type': 'WebSite',
   name: 'Jusoen',
   url: BASE_URL,
-  description: '한글 주소를 영문 도로명주소로 즉시 변환하는 무료 서비스',
+  description: '영문주소 변환, SWIFT 코드 조회, 계좌정보 영문전환을 한 곳에서 제공하는 무료 서비스',
   potentialAction: {
     '@type': 'SearchAction',
     target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/english-address?q={search_term_string}` },
@@ -49,14 +49,22 @@ const websiteJsonLd = {
   },
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Jusoen',
+  url: BASE_URL,
+  email: 'brianpage.kr@gmail.com',
+  description: '해외 서비스 이용에 필요한 영문 정보를 즉시 확인할 수 있는 무료 한국 주소·금융 정보 서비스',
+  sameAs: [`${BASE_URL}/about`],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       </head>
       <body className="min-h-screen flex flex-col">
         <LanguageProvider>

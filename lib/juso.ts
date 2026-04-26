@@ -64,7 +64,7 @@ export function toAddressForm(juso: JusoResult): AddressFormFields {
     const addrParts = [rn, emdNm, sggNm].filter(Boolean)
     return {
       addressLine1: `${buildingNo} ${addrParts.join(', ')}`,
-      addressLine2: juso.bdNm || '',
+      addressLine2: '',
       city,
       state: siNm,
       zipCode: juso.zipNo,
@@ -76,7 +76,7 @@ export function toAddressForm(juso: JusoResult): AddressFormFields {
   const { addressLine1, city, state } = parseEngAddr(juso.engAddr)
   return {
     addressLine1,
-    addressLine2: juso.bdNm || '',
+    addressLine2: '',
     city,
     state,
     zipCode: juso.zipNo,

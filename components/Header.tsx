@@ -32,6 +32,9 @@ export default function Header() {
             <Link href="/bank-account" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
               계좌정보 영문전환
             </Link>
+            <Link href="/swift-code" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
+              SWIFT 조회
+            </Link>
             <Link href="/english-address" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
               이용방법
             </Link>

@@ -227,7 +227,10 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
                 ))}
               </div>
             )}
-            {form.addressLine2 && <Row label="Address Line 2" value={form.addressLine2} english />}
+            <div className="flex items-start gap-2">
+              <span className="text-sm text-[#6B7280] w-32 shrink-0 pt-0.5">Address Line 2</span>
+              <span className="text-sm text-[#9CA3AF] italic">동·호수, 층 등 직접 입력</span>
+            </div>
             <Row label="City" value={form.city} english />
             <Row label="State / Province" value={form.state} english />
             <Row label="ZIP Code" value={form.zipCode} english />
