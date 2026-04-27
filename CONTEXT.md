@@ -17,16 +17,20 @@
 
 ---
 
-## 현재 구현 상태 (2026-04-25 기준)
+## 현재 구현 상태 (2026-04-27 기준)
 
 ### 완료된 것
 - `/english-address` — 영문주소 변환 메인 기능 (검색 → 결과 → 복사)
+- `/bank-account` — 계좌정보 영문전환 (한국 은행 선택 → 영문명·SWIFT·Bank Address 복사)
+- `/swift-code` — 한국 SWIFT 코드 조회 (245개 금융기관 검색·복사)
+- `/road-address` — 도로명주소 소개 (구조·읽는 법·영문 표기 설명 페이지)
 - `/about`, `/privacy` — AdSense 대비 신뢰 페이지
 - `app/api/search/route.ts` — 도로명주소 검색 API + 영문주소 API 동시 호출 및 병합
+- `app/map/route.ts` — 지도제공 API 프록시 (iframe 방식)
 - `lib/juso.ts` — API 타입 정의 및 주소 파싱 로직
 - `components/` — Header, Footer, SearchBox, ResultCard, CopyButton, LanguageToggle
 - `lib/language-context.tsx` — 한글/English 전환 Context
-- `sitemap.ts`, `robots.ts` — SEO 기본 설정
+- `sitemap.ts`, `robots.ts` — SEO 기본 설정 (7개 페이지 등록)
 - SQL 키워드 필터링, UTF-8 인코딩 처리
 - JSON-LD 구조화 데이터 (WebSite, FAQPage, SoftwareApplication)
 - canonical URL, Twitter Card, OpenGraph 메타 완비
@@ -39,8 +43,6 @@
 - 전체 폰트 18px 기준
 - State → State / Province 라벨 변경
 - "해외 사이트 입력용" → "해외 사이트 입력"
-
-### 추가 완료 (2026-04-25)
 - GitHub 연결 (brianpage2/jusoen, private)
 - Vercel 배포 완료 (jusoen.co.kr 도메인 연결)
 - 도로명주소 검색 API + 영문주소 API 승인키 발급 및 연동
@@ -54,8 +56,7 @@
 - 번호(1,2,3)가 카드 전체 높이에 걸쳐 표시
 
 ### 미완료 / 대기 중
-- 영문 계좌 입력 서비스 (/bank-account) — 기획 완료, 구현 예정
-- Google AdSense 신청 (2~4주 후 권장)
+- Google AdSense 신청 (콘텐츠 충분히 쌓인 후 신청 권장)
 
 ---
 
@@ -82,13 +83,13 @@
 
 ---
 
-## 배포 순서 (아직 미완료)
+## 배포 순서 (완료)
 
-1. GitHub repository 생성 및 push
-2. Vercel 배포 → production URL 확보
-3. 그 URL로 API 신청 (민간기관, 인터넷망, 개발용)
-4. 승인키 발급 → 환경변수 설정
-5. jusoen.co.kr 연결
+1. ~~GitHub repository 생성 및 push~~ ✅
+2. ~~Vercel 배포 → production URL 확보~~ ✅
+3. ~~그 URL로 API 신청 (민간기관, 인터넷망, 개발용)~~ ✅
+4. ~~승인키 발급 → 환경변수 설정~~ ✅
+5. ~~jusoen.co.kr 연결~~ ✅
 
 ---
 

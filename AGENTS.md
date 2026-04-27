@@ -4,6 +4,12 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+## 홈페이지 수정 금지
+
+**`app/page.tsx` (홈페이지)는 완성된 상태 — 명시적 요청 없이 절대 수정 금지**
+
+---
+
 ## Jusoen 프로젝트 전용 규칙
 
 **Google SEO 최적화는 선택이 아닌 필수 (AdSense 승인 조건)**

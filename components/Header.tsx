@@ -26,6 +26,9 @@ export default function Header() {
         </Link>
         <nav className="flex items-center gap-4">
           <div className="hidden sm:flex items-center gap-6">
+            <Link href="/" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
+              영문주소 변환
+            </Link>
             <Link href="/about" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
               서비스 소개
             </Link>
@@ -34,9 +37,6 @@ export default function Header() {
             </Link>
             <Link href="/swift-code" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
               SWIFT 코드 조회
-            </Link>
-            <Link href="/" className="text-sm text-[#5A6A7A] hover:text-[#1B6EBE] transition-colors">
-              영문주소 변환
             </Link>
           </div>
           <LanguageToggle />
