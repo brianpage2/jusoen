@@ -55,7 +55,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'City와 State에는 무엇을 입력하나요?',
-      acceptedAnswer: { '@type': 'Answer', text: 'City에는 시·군·구 이름(영문), State/Province에는 시·도 이름(영문)을 입력합니다. 예: City = Gangnam-gu, State = Seoul. Jusoen이 자동으로 채워줍니다.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'City에는 시 영문명, State/Province에는 시·도 영문명을 입력합니다. 예: City = Seoul, State = Seoul. Jusoen이 자동으로 채워줍니다.' },
     },
     {
       '@type': 'Question',
