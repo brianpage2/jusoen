@@ -169,7 +169,7 @@ export default function EnglishAddressClient() {
                 {[
                   ['Address Line 1', '도로명 + 건물번호', '152 Teheran-ro, Gangnam-gu'],
                   ['Address Line 2', '동/호수 (없으면 공백)', '705-1104'],
-                  ['City', '시/군/구 영문명', 'Gangnam-gu'],
+                  ['City', '시 영문명', 'Seoul'],
                   ['State / Province', '시/도 영문명', 'Seoul'],
                   ['ZIP / Postal Code', '우편번호 5자리', '06236'],
                   ['Country', '국가', 'South Korea'],
