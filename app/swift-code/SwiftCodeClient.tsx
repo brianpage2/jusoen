@@ -4,14 +4,20 @@ import { useState } from 'react'
 import Link from 'next/link'
 import CopyButton from '@/components/CopyButton'
 import { SWIFT_CODES_KR } from '@/lib/swift-codes-kr'
+import { BANKS } from '@/lib/banks'
 
-const categories = ['국내은행', '인터넷은행', '정책·중앙은행', '외국계은행', '증권·자산운용', '기타'] as const
+const bankAddrMap = new Map(BANKS.map(b => [b.swift, { address: b.address, addressKo: b.addressKo }]))
+
+const categories = ['국내은행', '인터넷은행', '정책·중앙은행', '외국계은행', '증권·자산운용'] as const
 
 export default function SwiftCodeClient() {
   const [query, setQuery] = useState('')
-  const [category, setCategory] = useState<string | null>(null)
+  const [category, setCategory] = useState<string | null>('국내은행')
+
+  const total = SWIFT_CODES_KR.filter(e => e.category !== '기타').length
 
   const filtered = SWIFT_CODES_KR.filter(e => {
+    if (e.category === '기타') return false
     const matchCat = !category || e.category === category
     const q = query.trim()
     const matchQ = !q ||
@@ -32,7 +38,7 @@ export default function SwiftCodeClient() {
           <h1 className="text-white text-xl font-bold">한국 SWIFT 코드 조회</h1>
         </div>
         <p className="text-white/70 text-sm text-center mb-4">
-          은행명·영문명·SWIFT 코드로 검색하세요. 총 <strong className="text-white">{SWIFT_CODES_KR.length}개</strong> 한국 금융기관
+          은행명·영문명·SWIFT 코드로 검색하세요. 총 <strong className="text-white">{total}개</strong> 한국 금융기관
         </p>
         <input
           type="text"
@@ -53,7 +59,7 @@ export default function SwiftCodeClient() {
               : 'bg-white border border-[#D0DCE8] text-[#5A6A7A] hover:border-[#1B2B6E] hover:text-[#1B2B6E]'
           }`}
         >
-          전체 ({SWIFT_CODES_KR.length})
+          전체 ({total})
         </button>
         {categories.map(cat => {
           const count = SWIFT_CODES_KR.filter(e => e.category === cat).length
@@ -73,17 +79,46 @@ export default function SwiftCodeClient() {
         })}
       </div>
 
+      {/* 건수 / 출처 */}
+      <div className="flex items-center justify-between mb-2">
+        <p className="text-xs text-[#9CA3AF]">{filtered.length}개 표시 중 · 총 {total}개</p>
+        <a
+          href="https://www.theswiftcodes.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-[#9CA3AF] hover:text-[#1B6EBE] transition-colors whitespace-nowrap"
+        >
+          출처: theswiftcodes.com
+        </a>
+      </div>
+
       {/* 결과 */}
       <div className="bg-white border border-[#D0DCE8] rounded-lg overflow-hidden">
         {filtered.length === 0 ? (
           <p className="px-4 py-10 text-sm text-[#9CA3AF] text-center">검색 결과가 없습니다.</p>
         ) : (
           <div className="divide-y divide-[#E2E8F0]">
-            {filtered.map(entry => (
-              <div key={entry.swift} className="flex items-center gap-3 px-4 py-3 hover:bg-[#F9FAFB]">
+            {filtered.map(entry => {
+              const addr = bankAddrMap.get(entry.swift)
+              return (
+              <div key={entry.swift} className="flex items-center gap-3 px-4 py-2.5 hover:bg-[#F9FAFB]">
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-[#1A1A1A]">{entry.nameKo}</p>
-                  <p className="text-xs text-[#6B7280] truncate">{entry.nameEn}</p>
+                  {addr ? (
+                    <div className="grid gap-x-3 min-w-0 overflow-hidden" style={{ gridTemplateColumns: 'max-content 1fr' }}>
+                      <p className="text-sm font-medium text-[#1A1A1A]">{entry.nameKo}</p>
+                      <p className="text-[11px] text-[#9CA3AF] self-center truncate">{addr.addressKo}</p>
+                      <p className="text-xs text-[#6B7280]">{entry.nameEn}</p>
+                      <div className="flex items-center gap-1 self-center min-w-0">
+                        <span className="text-[11px] text-[#9CA3AF] truncate">{addr.address}</span>
+                        <CopyButton value={addr.address} />
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <p className="text-sm font-medium text-[#1A1A1A]">{entry.nameKo}</p>
+                      <p className="text-xs text-[#6B7280] truncate">{entry.nameEn}</p>
+                    </>
+                  )}
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   <span className="text-xs text-[#9CA3AF] hidden sm:inline">{entry.city}</span>
@@ -92,20 +127,10 @@ export default function SwiftCodeClient() {
                   <CopyButton value={entry.swift} />
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         )}
-        <div className="px-4 py-2 border-t border-[#E2E8F0] bg-[#F9FAFB] flex items-center justify-between gap-2">
-          <p className="text-xs text-[#9CA3AF]">{filtered.length}개 표시 중 · 총 {SWIFT_CODES_KR.length}개</p>
-          <a
-            href="https://www.theswiftcodes.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-[#9CA3AF] hover:text-[#1B6EBE] transition-colors whitespace-nowrap"
-          >
-            출처: theswiftcodes.com
-          </a>
-        </div>
       </div>
       {/* SEO 콘텐츠 */}
       <section className="mt-16 space-y-10">

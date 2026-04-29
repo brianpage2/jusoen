@@ -135,10 +135,19 @@ export default function BankAccountClient() {
             {bankCode && (() => {
               const b = findBank(bankCode)
               return b ? (
-                <div className="mt-1.5 flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg">
-                  <span className="text-white/60 text-xs shrink-0">SWIFT / BIC</span>
-                  <span className="text-white font-bold font-[Inter] text-sm tracking-wide">{b.swift}</span>
-                  <CopyButton value={b.swift} />
+                <div className="mt-1.5 space-y-1.5">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-white/10 rounded-lg">
+                    <span className="text-white/60 text-xs shrink-0">SWIFT / BIC</span>
+                    <span className="text-white font-bold font-[Inter] text-sm tracking-wide">{b.swift}</span>
+                    <CopyButton value={b.swift} />
+                  </div>
+                  <div className="px-3 py-2 bg-white/10 rounded-lg">
+                    <p className="text-white/60 text-xs mb-1">{b.addressKo}</p>
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="text-white text-xs">{b.address}</span>
+                      <CopyButton value={b.address} />
+                    </div>
+                  </div>
                 </div>
               ) : null
             })()}
