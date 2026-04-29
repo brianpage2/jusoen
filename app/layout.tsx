@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     default: '영문주소 변환 · 도로명주소 확인 | Jusoen',
     template: '%s | Jusoen',
   },
+  icons: {
+    icon: '/homeicon.png',
+    apple: '/homeicon.png',
+  },
   description: '한글 주소를 영문 도로명주소로 즉시 변환하고 복사하세요. 해외 사이트 가입, 국제 배송, 서류 작성에 필요한 Address Line 1, 2, City, State, ZIP 형식으로 제공합니다.',
   keywords: [
     '영문주소 변환', '한글 주소 영어로', '도로명주소 영문', '영문 도로명주소', '우편번호 검색',
@@ -49,11 +53,6 @@ const websiteJsonLd = {
   name: 'Jusoen',
   url: BASE_URL,
   description: '영문주소 변환, SWIFT 코드 조회, 계좌정보 영문전환을 한 곳에서 제공하는 무료 서비스',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/?q={search_term_string}` },
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 const organizationJsonLd = {
