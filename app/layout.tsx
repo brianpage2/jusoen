@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: '영문주소 변환 | Jusoen',
     description: '한글 주소를 영문 주소로 즉시 변환하고 복사하세요.',
     url: BASE_URL,
-    siteName: 'Jusoen',
+    siteName: '영문도로명주소',
     locale: 'ko_KR',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen' }],
@@ -50,7 +50,8 @@ export const metadata: Metadata = {
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Jusoen',
+  name: '영문도로명주소',
+  alternateName: 'Jusoen',
   url: BASE_URL,
   description: '영문주소 변환, SWIFT 코드 조회, 계좌정보 영문전환을 한 곳에서 제공하는 무료 서비스',
 }
