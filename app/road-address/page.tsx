@@ -310,7 +310,7 @@ export default function RoadAddressPage() {
             <p className="font-semibold text-[#1B2B6E] mb-3">영문주소가 필요하다면 바로 변환해보세요</p>
             <p className="mb-4">주소를 검색하면 공식 영문 도로명주소와 해외 사이트 입력 양식을 즉시 확인할 수 있습니다.</p>
             <Link
-              href="/english-address"
+              href="/"
               className="inline-block bg-[#1B6EBE] text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-[#145A9E] transition-colors"
             >
               영문주소 변환하러 가기 →
