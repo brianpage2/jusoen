@@ -30,7 +30,7 @@ export const BANKS: Bank[] = [
   { code: '089', nameKo: '케이뱅크',      nameEn: 'K Bank',                                   swift: 'KBANKRSE',    address: '30, Eulji-ro, Jung-gu, Seoul, Korea',                                   addressKo: '서울특별시 중구 을지로 30',            url: 'https://www.kbanknow.com' },
   { code: '090', nameKo: '카카오뱅크',    nameEn: 'KAKAOBANK CORP',                           swift: 'KAKOKR22',    address: '166, Pangyo-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Korea',           addressKo: '경기도 성남시 분당구 판교로 166',      url: 'https://cs.kakaobank.com', swiftUrl: 'https://kakaobank.com/Corp/News/Notices/view/14125' },
   { code: '007', nameKo: '수협은행',      nameEn: 'Suhyup Bank',                              swift: 'NFFCKRSE',    address: '62, Ogeum-ro, Songpa-gu, Seoul, Korea',                                 addressKo: '서울특별시 송파구 오금로 62',          url: 'https://www.suhyup-bank.com' },
-  { code: '092', nameKo: '토스뱅크',      nameEn: 'Toss Bank',                                swift: 'TOSIKRSE',    address: '5, Teheran-ro 35-gil, Gangnam-gu, Seoul, Korea',                        addressKo: '서울특별시 강남구 테헤란로35길 5',     url: 'https://www.tossbank.com' },
+  { code: '092', nameKo: '토스뱅크',      nameEn: 'TOSS BANK',                                swift: 'TOBNKRSE',    address: '131, Teheran-ro, Gangnam-gu, Seoul, Korea',                             addressKo: '서울특별시 강남구 테헤란로 131',       url: 'https://www.tossbank.com' },
 ]
 
 export function findBank(code: string): Bank | undefined {

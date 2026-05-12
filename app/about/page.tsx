@@ -5,7 +5,7 @@ const BASE_URL = 'https://jusoen.co.kr'
 
 export const metadata: Metadata = {
   title: '서비스 소개 — Jusoen 영문주소 변환 · SWIFT 코드 조회',
-  description: 'Jusoen은 영문 도로명주소 변환, 한국 SWIFT 코드 조회(245개 금융기관), 계좌정보 영문전환을 무료로 제공합니다. 해외 쇼핑·송금·서류 작성에 필요한 모든 영문 정보를 한 곳에서.',
+  description: 'Jusoen은 영문 도로명주소 변환, 한국 SWIFT 코드 조회(177개 금융기관), 계좌정보 영문전환을 무료로 제공합니다. 해외 쇼핑·송금·서류 작성에 필요한 모든 영문 정보를 한 곳에서.',
   keywords: [
     '주소원 서비스 소개', '영문주소 변환 서비스', 'SWIFT 코드 조회 서비스',
     '계좌정보 영문전환', '한국 영문주소', '해외 사이트 주소 입력',
@@ -37,8 +37,8 @@ const services = [
     num: '②',
     title: 'SWIFT 코드 조회',
     href: '/swift-code',
-    desc: '국내은행·인터넷은행·외국계 은행·증권사 등 한국 245개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하고 복사할 수 있습니다. 카테고리 필터와 실시간 검색을 지원합니다.',
-    badge: '245개 금융기관',
+    desc: '국내은행·인터넷은행·외국계 은행·증권사 등 한국 177개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하고 복사할 수 있습니다. 카테고리 필터와 실시간 검색을 지원합니다.',
+    badge: '177개 금융기관',
   },
   {
     num: '③',
@@ -113,7 +113,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap gap-3 mt-4">
             {[
               '행정안전부 공식 API 연동',
-              '한국 245개 금융기관 SWIFT 코드',
+              '한국 177개 금융기관 SWIFT 코드',
               '21개 주요 은행 지원',
               '회원가입 없이 무료',
             ].map(t => (
@@ -179,7 +179,6 @@ export default function AboutPage() {
           <h2 className="text-base font-semibold text-[#1A1A1A] mb-3">이용 시 유의사항</h2>
           <ul className="space-y-1.5 list-disc list-inside">
             <li>아파트 동·호수 등 상세주소는 결과에 포함되지 않습니다. Address Line 2에 직접 입력하세요.</li>
-            <li>SWIFT 코드는 변경될 수 있으므로 반드시 은행 공식 사이트에서 최신 코드를 확인하세요.</li>
             <li>예금주 영문명은 본인 거래 은행 앱에서 직접 확인하셔야 합니다.</li>
             <li>신축 건물 또는 최근 변경된 도로명은 검색 결과에 반영되지 않을 수 있습니다.</li>
           </ul>

@@ -4,8 +4,8 @@ import SwiftCodeClient from './SwiftCodeClient'
 const BASE_URL = 'https://jusoen.co.kr'
 
 export const metadata: Metadata = {
-  title: '한국 SWIFT 코드 조회 · BIC 코드 검색 · 176개 금융기관',
-  description: 'KB국민은행 CZNBKRSE, 신한은행 SHBKKRSE, 카카오뱅크 KAKOKR22 등 한국 176개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하고 복사하세요. 국내은행·인터넷은행·외국계은행·증권사 모두 포함.',
+  title: '한국 SWIFT 코드 조회 · BIC 코드 검색 · 177개 금융기관',
+  description: 'KB국민은행 CZNBKRSE, 신한은행 SHBKKRSE, 카카오뱅크 KAKOKR22 등 한국 177개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하고 복사하세요. 국내은행·인터넷은행·외국계은행·증권사 모두 포함.',
   keywords: [
     'SWIFT 코드 조회', 'BIC 코드', '한국 SWIFT 코드', '은행 SWIFT 코드',
     '국민은행 SWIFT 코드', '신한은행 SWIFT 코드', '카카오뱅크 SWIFT 코드',
@@ -15,16 +15,16 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${BASE_URL}/swift-code` },
   openGraph: {
-    title: '한국 SWIFT 코드 조회 · 176개 금융기관 | Jusoen',
-    description: '국민·신한·카카오뱅크 등 한국 176개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
+    title: '한국 SWIFT 코드 조회 · 177개 금융기관 | Jusoen',
+    description: '국민·신한·카카오뱅크 등 한국 177개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
     url: `${BASE_URL}/swift-code`,
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen SWIFT 코드 조회' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '한국 SWIFT 코드 조회 · 176개 금융기관 | Jusoen',
-    description: '국민·신한·카카오뱅크 등 한국 176개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
+    title: '한국 SWIFT 코드 조회 · 177개 금융기관 | Jusoen',
+    description: '국민·신한·카카오뱅크 등 한국 177개 금융기관 SWIFT 코드를 즉시 검색하고 복사하세요.',
     images: ['/og-image.png'],
   },
 }
@@ -36,7 +36,7 @@ const softwareJsonLd = {
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Web',
   url: `${BASE_URL}/swift-code`,
-  description: '한국 176개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하는 무료 웹 서비스',
+  description: '한국 177개 금융기관의 SWIFT 코드(BIC 코드)를 즉시 검색하는 무료 웹 서비스',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
 }
 
@@ -72,7 +72,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: '증권사·자산운용사도 SWIFT 코드가 있나요?',
-      acceptedAnswer: { '@type': 'Answer', text: '네. SWIFT 코드는 은행뿐 아니라 증권사, 자산운용사 등 SWIFT 네트워크에 연결된 모든 금융기관에 부여됩니다. 이 서비스에서 245개 한국 금융기관의 SWIFT 코드를 카테고리별로 조회할 수 있습니다.' },
+      acceptedAnswer: { '@type': 'Answer', text: '네. SWIFT 코드는 은행뿐 아니라 증권사, 자산운용사 등 SWIFT 네트워크에 연결된 모든 금융기관에 부여됩니다. 이 서비스에서 177개 한국 금융기관의 SWIFT 코드를 카테고리별로 조회할 수 있습니다.' },
     },
   ],
 }

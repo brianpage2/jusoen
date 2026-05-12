@@ -144,9 +144,6 @@ export default function SwiftCodeClient() {
             <li>결과 목록에서 원하는 기관의 SWIFT 코드 옆 복사 버튼을 클릭합니다.</li>
             <li>복사한 코드를 해외 송금 양식 또는 해외 플랫폼 계좌 등록란에 붙여넣으세요.</li>
           </ol>
-          <div className="mt-3 bg-[#FFF8EC] border border-[#F5C842] rounded px-3 py-2 text-xs text-[#92600A]">
-            ⚠️ SWIFT 코드는 변경될 수 있습니다. 중요한 거래 전에는 반드시 해당 은행 공식 사이트에서 최신 코드를 확인하세요.
-          </div>
         </div>
 
         {/* SWIFT 코드 구조 */}
@@ -205,7 +202,7 @@ export default function SwiftCodeClient() {
               },
               {
                 q: '은행 SWIFT 코드는 어디서 공식 확인할 수 있나요?',
-                a: '각 은행 공식 홈페이지의 해외 송금 안내 페이지, 인터넷 뱅킹의 해외 송금 메뉴, 또는 은행 고객센터에 문의하면 확인할 수 있습니다. SWIFT 코드는 변경될 수 있으므로 중요한 거래 전에는 반드시 은행 공식 채널에서 재확인하세요.',
+                a: '각 은행 공식 홈페이지의 해외 송금 안내 페이지, 인터넷 뱅킹의 해외 송금 메뉴, 또는 은행 고객센터에 문의하면 확인할 수 있습니다.',
               },
               {
                 q: '잘못된 SWIFT 코드를 입력하면 어떻게 되나요?',
@@ -213,7 +210,7 @@ export default function SwiftCodeClient() {
               },
               {
                 q: '증권사·자산운용사도 SWIFT 코드가 있나요?',
-                a: '네. SWIFT 코드는 은행뿐 아니라 증권사, 자산운용사, 보험사 등 SWIFT 네트워크에 연결된 모든 금융기관에 부여됩니다. 이 서비스에서는 국내 245개 금융기관의 SWIFT 코드를 카테고리별로 조회할 수 있습니다.',
+                a: '네. SWIFT 코드는 은행뿐 아니라 증권사, 자산운용사, 보험사 등 SWIFT 네트워크에 연결된 모든 금융기관에 부여됩니다. 이 서비스에서는 국내 177개 금융기관의 SWIFT 코드를 카테고리별로 조회할 수 있습니다.',
               },
             ].map(({ q, a }) => (
               <details key={q} className="bg-white border border-[#D0DCE8] rounded-lg">

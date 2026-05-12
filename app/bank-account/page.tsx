@@ -45,7 +45,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: '카카오뱅크 SWIFT 코드는 무엇인가요?',
-      acceptedAnswer: { '@type': 'Answer', text: '카카오뱅크 SWIFT 코드는 KAKOKR22입니다. 단, SWIFT 코드는 변경될 수 있으므로 카카오뱅크 공식 사이트에서 반드시 확인하세요.' },
+      acceptedAnswer: { '@type': 'Answer', text: '카카오뱅크 SWIFT 코드는 KAKOKR22입니다.' },
     },
     {
       '@type': 'Question',

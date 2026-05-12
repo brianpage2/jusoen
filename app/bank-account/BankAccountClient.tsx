@@ -411,9 +411,6 @@ export default function BankAccountClient() {
                 <li>은행 고객센터 전화 문의</li>
                 <li>위 Jusoen 서비스에서 은행 선택 시 SWIFT 코드 즉시 확인 및 복사</li>
               </ol>
-              <div className="mt-3 bg-[#FFF8EC] border border-[#F5C842] rounded px-3 py-2 text-xs text-[#92600A]">
-                ⚠️ SWIFT 코드는 변경될 수 있습니다. 중요한 거래 전에는 반드시 은행 공식 사이트에서 최신 코드를 확인하세요.
-              </div>
             </div>
 
             {/* 잘못 입력 시 */}
