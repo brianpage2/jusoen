@@ -34,16 +34,6 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'SWIFT 코드와 BIC 코드는 같은 건가요?',
-      acceptedAnswer: { '@type': 'Answer', text: '네, SWIFT 코드와 BIC(Bank Identifier Code)는 동일한 코드입니다. 국제 금융 거래 시 은행을 식별하는 8~11자리 코드입니다.' },
-    },
-    {
-      '@type': 'Question',
-      name: '한국은 IBAN을 사용하나요?',
-      acceptedAnswer: { '@type': 'Answer', text: '아니요, 한국은 IBAN을 사용하지 않습니다. 해외 송금 또는 해외 사이트 계좌 등록 시 계좌번호와 SWIFT 코드를 함께 입력하세요.' },
-    },
-    {
-      '@type': 'Question',
       name: '카카오뱅크 SWIFT 코드는 무엇인가요?',
       acceptedAnswer: { '@type': 'Answer', text: '카카오뱅크 SWIFT 코드는 KAKOKR22입니다.' },
     },

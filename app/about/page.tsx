@@ -16,12 +16,14 @@ export const metadata: Metadata = {
     title: '서비스 소개 | Jusoen',
     description: '영문주소 변환, SWIFT 코드 조회, 계좌정보 영문전환을 한 곳에서 무료로.',
     url: `${BASE_URL}/about`,
-    type: 'website',
+    type: 'article',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen 서비스 소개' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: '서비스 소개 | Jusoen',
     description: '영문주소 변환, 한국 SWIFT 코드 조회, 계좌정보 영문전환을 무료로 제공하는 서비스입니다.',
+    images: ['/og-image.png'],
   },
 }
 

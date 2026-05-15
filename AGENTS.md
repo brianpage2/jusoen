@@ -4,6 +4,14 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+## 프로젝트 거의 완성 상태 — 함부로 수정 금지
+
+**jusoen.co.kr은 실서버 운영 중이며 대부분의 페이지가 완성된 상태다.**
+- 명시적 요청 없이 어떤 파일도 수정하지 않는다
+- 요청 범위를 벗어난 변경은 반드시 먼저 물어본다
+- "더 나을 것 같아서", "SEO에 좋을 것 같아서" 같은 이유로 자의적 수정 금지
+- 수정 전 항상 CONTEXT.md를 읽어 이미 결정된 사항인지 확인한다
+
 ## 홈페이지 수정 금지
 
 **`app/page.tsx` (홈페이지)는 완성된 상태 — 명시적 요청 없이 절대 수정 금지**
@@ -26,6 +34,14 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - 컴포넌트는 페이지 간 재사용 가능하게 설계
 - 라우트: `jusoen.co.kr/[기능명]` 패턴 유지
 
+## SWIFT 코드 데이터 — 절대 변경 금지
+
+**`lib/swift-codes-kr.ts`에 248개 수록 / 화면 표시는 177개**
+
+- 데이터 파일에는 248개가 있지만 기업·기관 전용 등 일반 사용자에게 불필요한 항목은 숨김 처리됨
+- 메타데이터, UI 문구 등 모든 공개 표기는 **반드시 177개**로 유지
+- 248을 보고 "177이 틀렸다"고 판단해서 수정하면 절대 안 됨
+
 ## UI 지침 (반드시 준수)
 
 - **복사 버튼**: 텍스트 배지 금지. 아이콘(클립보드 SVG) 버튼으로, 복사할 텍스트 바로 옆에 붙임
@@ -43,7 +59,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 **API**
 - 사용: 도로명주소 검색 API + 영문주소 API 조합
-- 보류: 팝업 API (UX 불일치, 세션 이슈), 좌표/상세주소/지도 API
+- 보류: 팝업 API (UX 불일치, 세션 이슈), 좌표/상세주소 API
+- 완료: 지도제공 API (iframe 방식, CSS 충돌 방지 처리)
 - 검색 API와 팝업 API는 승인키 공유 불가
 
 **검색 API 옵션**

@@ -46,8 +46,8 @@ const guideTypes = [
 
 const t = {
   ko: {
-    roadAddr: '도로명주소', jibun: '지번', zipNo: '우편번호',
-    expandedRoad: '도로명주소', expandedJibun: '지번주소', expandedIntl: '해외 사이트 입력',
+    roadAddr: '도로명(한)', jibun: '지번주소', zipNo: '우편번호',
+    expandedRoad: '도로명(영)', expandedJibun: '지번주소', expandedIntl: '해외 사이트 입력',
     korean: '한글', english: '영문',
     fold: '— 접기', unfold: '+ 영문펼치기',
   },
@@ -93,11 +93,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
             <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
               <span
                 className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] px-2 text-center py-0.5 rounded font-semibold"
-                style={{
-                  minWidth: lang === 'en' ? '96px' : '68px',
-                  letterSpacing: lang === 'ko' ? '0.4em' : undefined,
-                  paddingLeft: lang === 'ko' ? '0.4em' : undefined,
-                }}
+                style={{ minWidth: lang === 'en' ? '96px' : '68px' }}
               >{tx.jibun}</span>
               <span className="text-base text-[#374151] leading-snug">{juso.jibunAddr}</span>
               <CopyButton value={juso.jibunAddr} />
@@ -279,12 +275,12 @@ export function ResultCardSkeleton() {
           <div className="flex items-stretch gap-0">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
-                <span className="shrink-0 text-xs bg-[#1B2B6E] text-white w-[68px] text-center py-0.5 rounded font-semibold">도로명주소</span>
-                <span className="text-sm text-[#C0CDD8]">여기에 표시됩니다</span>
+                <span className="shrink-0 text-xs bg-[#1B2B6E] text-white w-[68px] text-center py-0.5 rounded font-semibold">도로명(한)</span>
+                <span className="text-sm text-[#C0CDD8]">한글 주소는 여기에 표시됩니다.</span>
               </div>
               <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
-                <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] w-[68px] text-center py-0.5 rounded font-semibold tracking-[0.4em] pl-[0.4em]">지번</span>
-                <span className="text-sm text-[#C0CDD8]">여기에 표시됩니다</span>
+                <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] w-[68px] text-center py-0.5 rounded font-semibold">지번주소</span>
+                <span className="text-sm text-[#C0CDD8]">한글 주소는 여기에 표시됩니다.</span>
               </div>
             </div>
             <div className="hidden sm:flex shrink-0 items-stretch gap-3 pl-3">
@@ -304,7 +300,7 @@ export function ResultCardSkeleton() {
         <div className="border-t border-[#E2E8F0] bg-white px-3 py-4 space-y-4">
           <div>
             <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
-              <span className="shrink-0 text-xs bg-[#1B2B6E] text-white px-2 py-0.5 rounded font-semibold">도로명주소</span>
+              <span className="shrink-0 text-xs bg-[#1B2B6E] text-white px-2 py-0.5 rounded font-semibold">도로명(영)</span>
               <span className="text-sm text-[#C0CDD8]">영문 주소는 여기에 표시됩니다.</span>
             </div>
             <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">

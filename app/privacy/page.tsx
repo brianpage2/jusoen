@@ -12,11 +12,13 @@ export const metadata: Metadata = {
     description: 'Jusoen 서비스의 개인정보 수집·이용·보호 방침을 안내합니다.',
     url: `${BASE_URL}/privacy`,
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen 개인정보처리방침' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: '개인정보처리방침 | Jusoen',
     description: 'Jusoen 서비스의 개인정보 수집·이용·보호 방침을 안내합니다.',
+    images: ['/og-image.png'],
   },
 }
 

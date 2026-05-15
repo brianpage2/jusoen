@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     description: '도로명주소 구조, 지번주소와의 차이, 영문 표기 방법을 한 번에 정리했습니다.',
     url: `${BASE_URL}/road-address`,
     type: 'article',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen 도로명주소 소개' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '도로명주소 소개 | Jusoen',
+    description: '도로명주소 구조, 지번주소와의 차이, 영문 표기 방법을 한 번에 정리했습니다.',
+    images: ['/og-image.png'],
   },
 }
 
