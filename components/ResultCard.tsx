@@ -46,8 +46,8 @@ const guideTypes = [
 
 const t = {
   ko: {
-    roadAddr: '도로명', jibun: '지번주소', zipNo: '우편번호',
-    expandedRoad: '도로명(영)', expandedJibun: '지번주소', expandedIntl: '해외 사이트 입력',
+    roadAddr: '도로명', jibun: '지번', zipNo: '우편번호',
+    expandedRoad: '도로명', expandedJibun: '지번', expandedIntl: '해외 사이트 입력',
     korean: '한글', english: '영문',
     fold: '— 접기', unfold: '+ 영문펼치기',
   },
@@ -86,14 +86,13 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
         <div className="flex items-stretch gap-0">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
-              <span className="shrink-0 text-xs bg-[#1B2B6E] text-white px-2 text-center py-0.5 rounded font-semibold" style={{ minWidth: lang === 'en' ? '96px' : '68px' }}>{tx.roadAddr}</span>
+              <span className={`shrink-0 text-xs bg-[#1B2B6E] text-white text-center py-0.5 rounded font-semibold ${lang === 'en' ? 'w-[96px]' : 'w-[68px]'}`}>{tx.roadAddr}</span>
               <span className="text-base text-[#0D1B3E] font-bold leading-snug">{juso.roadAddr}</span>
               <CopyButton value={juso.roadAddr} />
             </div>
             <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
               <span
-                className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] px-2 text-center py-0.5 rounded font-semibold"
-                style={{ minWidth: lang === 'en' ? '96px' : '68px' }}
+                className={`shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] text-center py-0.5 rounded font-semibold ${lang === 'en' ? 'w-[96px]' : 'w-[68px]'}`}
               >{tx.jibun}</span>
               <span className="text-base text-[#374151] leading-snug">{juso.jibunAddr}</span>
               <CopyButton value={juso.jibunAddr} />
@@ -154,7 +153,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
             {engAddr && (
               <>
                 <div className="flex items-center gap-2 flex-wrap bg-[#EEF2FA] px-3 py-2 rounded-t min-h-[44px]">
-                  <span className="shrink-0 text-xs bg-[#1B2B6E] text-white px-2 py-0.5 rounded font-semibold">{tx.expandedRoad}</span>
+                  <span className={`shrink-0 text-xs bg-[#1B2B6E] text-white text-center py-0.5 rounded font-semibold ${lang === 'en' ? 'w-[96px]' : 'w-[68px]'}`}>{tx.expandedRoad}</span>
                   <span className="text-base font-[Inter] text-[#0D1B3E] font-bold leading-snug">{engAddr}</span>
                   <CopyButton value={engAddr} />
                   <button
@@ -183,7 +182,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
             )}
             {juso.engResult?.jibunAddr && (
               <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
-                <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] px-2 py-0.5 rounded font-semibold">{tx.expandedJibun}</span>
+                <span className={`shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] text-center py-0.5 rounded font-semibold ${lang === 'en' ? 'w-[96px]' : 'w-[68px]'}`}>{tx.expandedJibun}</span>
                 <span className="text-base font-[Inter] text-[#374151] leading-snug">{juso.engResult.jibunAddr}</span>
                 <CopyButton value={juso.engResult.jibunAddr} />
               </div>
@@ -279,7 +278,7 @@ export function ResultCardSkeleton() {
                 <span className="text-sm text-[#C0CDD8]">한글 주소는 여기에 표시됩니다.</span>
               </div>
               <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
-                <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] w-[68px] text-center py-0.5 rounded font-semibold">지번주소</span>
+                <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] w-[68px] text-center py-0.5 rounded font-semibold">지번</span>
                 <span className="text-sm text-[#C0CDD8]">한글 주소는 여기에 표시됩니다.</span>
               </div>
             </div>
@@ -304,7 +303,7 @@ export function ResultCardSkeleton() {
               <span className="text-sm text-[#C0CDD8]">영문 주소는 여기에 표시됩니다.</span>
             </div>
             <div className="flex items-center gap-2 flex-wrap bg-[#F4F6FB] px-3 py-2 rounded-b border-t border-[#D8E0F0] min-h-[44px]">
-              <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] px-2 py-0.5 rounded font-semibold">지번주소</span>
+              <span className="shrink-0 text-xs bg-[#E5E8EE] text-[#6B7280] w-[68px] text-center py-0.5 rounded font-semibold">지번</span>
               <span className="text-sm text-[#C0CDD8]">영문 주소는 여기에 표시됩니다.</span>
             </div>
           </div>
