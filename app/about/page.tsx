@@ -4,7 +4,7 @@ import Link from 'next/link'
 const BASE_URL = 'https://jusoen.co.kr'
 
 export const metadata: Metadata = {
-  title: '서비스 소개 — Jusoen 영문주소 변환 · SWIFT 코드 조회',
+  title: '서비스 소개 · 영문주소 변환 · SWIFT 코드 조회',
   description: 'Jusoen은 영문 도로명주소 변환, 한국 SWIFT 코드 조회(177개 금융기관), 계좌정보 영문전환을 무료로 제공합니다. 해외 쇼핑·송금·서류 작성에 필요한 모든 영문 정보를 한 곳에서.',
   keywords: [
     '주소원 서비스 소개', '영문주소 변환 서비스', 'SWIFT 코드 조회 서비스',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: '서비스 소개 | Jusoen',
     description: '영문주소 변환, SWIFT 코드 조회, 계좌정보 영문전환을 한 곳에서 무료로.',
     url: `${BASE_URL}/about`,
-    type: 'article',
+    type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jusoen 서비스 소개' }],
   },
   twitter: {
@@ -46,14 +46,14 @@ const services = [
     num: '③',
     title: '계좌정보 영문전환',
     href: '/bank-account',
-    desc: '해외 사이트에서 한국 은행 계좌 등록 시 필요한 Bank Name(영문), SWIFT/BIC Code, Bank Address(영문)를 즉시 확인하고 항목별로 복사할 수 있습니다. Google AdSense·PayPal 계좌 등록에 활용하세요.',
+    desc: '해외 사이트에서 한국 은행 계좌 등록 시 필요한 Bank Name(영문), SWIFT/BIC Code, Bank Address(영문)를 즉시 확인하고 항목별로 복사할 수 있습니다. PayPal 등 해외 플랫폼 계좌 등록에 활용하세요.',
     badge: '21개 주요 은행',
   },
 ]
 
 const useCases = [
   { icon: '🛒', text: '아마존·이베이 등 해외 쇼핑몰 배송 주소 입력' },
-  { icon: '💸', text: 'Google AdSense·PayPal 등 해외 서비스 계좌 등록' },
+  { icon: '💸', text: 'PayPal 등 해외 결제 서비스 계좌 등록' },
   { icon: '📦', text: '해외 직구·배송대행 영문 배송지 작성' },
   { icon: '🛂', text: '비자 신청·해외 카드 서비스 가입 시 주소 기재' },
   { icon: '✉️', text: '국제 우편·EMS·DHL·FedEx 발송 라벨 작성' },

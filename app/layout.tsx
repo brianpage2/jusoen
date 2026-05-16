@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     '아마존 배송 주소 영문', '해외 직구 영문 주소', '이베이 주소 입력', '비자 영문주소',
     'Address Line 1 한국', '해외배송 주소', '국제배송 주소', 'EMS 영문주소',
     'SWIFT 코드 조회', '한국 SWIFT 코드', '은행 SWIFT 코드', 'BIC 코드',
-    '계좌정보 영문전환', 'Google AdSense 계좌 등록', 'PayPal 계좌 등록',
+    '계좌정보 영문전환', 'PayPal 계좌 등록', '해외 계좌 등록',
     '해외 사이트 계좌 등록', '한국 은행 영문명', 'IBAN 한국',
   ],
   openGraph: {
@@ -61,6 +61,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'Jusoen',
   url: BASE_URL,
+  logo: `${BASE_URL}/homeicon.png`,
   email: 'brianpage.kr@gmail.com',
   description: '해외 서비스 이용에 필요한 영문 정보를 즉시 확인할 수 있는 무료 한국 주소·금융 정보 서비스',
   sameAs: [`${BASE_URL}/about`],

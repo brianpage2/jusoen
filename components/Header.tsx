@@ -30,12 +30,12 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-[#D0DCE8] sticky top-0 z-50">
       <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <LogoIcon />
           <span className="text-[18px] font-bold text-[#1A1A1A] leading-tight">
             영문도로명주소
           </span>
-        </Link>
+        </a>
         <nav className="flex items-center gap-4">
           {/* 데스크탑 메뉴 */}
           <div className="hidden sm:flex items-center gap-6">

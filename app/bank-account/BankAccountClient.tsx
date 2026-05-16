@@ -335,7 +335,7 @@ export default function BankAccountClient() {
               {[
                 { icon: '🏦', title: '국제 은행 식별 코드', desc: 'SWIFT Code(BIC)는 전 세계 금융기관을 식별하는 8~11자리 고유 코드입니다. 국제 송금 시 수취 은행을 정확하게 지정하는 데 사용됩니다.' },
                 { icon: '🌍', title: '전 세계 11,000개 이상', desc: '200개 이상 국가의 11,000개 이상 금융기관이 SWIFT 네트워크에 연결되어 있습니다. 대한민국은 245개 금융기관이 등록되어 있습니다.' },
-                { icon: '🔒', title: '안전한 송금의 핵심', desc: '올바른 SWIFT Code 사용은 송금 지연이나 반송을 방지합니다. Google AdSense, PayPal 등 해외 플랫폼 계좌 등록 시에도 필수입니다.' },
+                { icon: '🔒', title: '안전한 송금의 핵심', desc: '올바른 SWIFT Code 사용은 송금 지연이나 반송을 방지합니다. PayPal 등 해외 플랫폼 계좌 등록 시에도 필수입니다.' },
                 { icon: '✅', title: '한국 은행에서 확인하는 법', desc: '인터넷 뱅킹 → 해외 송금 안내, 또는 은행 공식 홈페이지에서 확인하세요. 위 Jusoen 서비스에서 은행 선택 시 바로 확인·복사할 수 있습니다.' },
               ].map(({ icon, title, desc }) => (
                 <div key={title} className="bg-white border border-[#D0DCE8] rounded-lg px-4 py-4">
