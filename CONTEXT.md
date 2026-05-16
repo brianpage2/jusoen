@@ -60,6 +60,15 @@
 - ResultCard 스켈레톤 placeholder 텍스트: "한글 주소는 여기에 표시됩니다."
 - `/road-address` — 행안부 보도자료 참고자료 섹션 추가 (표기순서·행정구역·도로명·상세주소 예시)
 - SEO 전반 완료 상태 (BreadcrumbList, FAQPage, SoftwareApplication, og 태그 등)
+- 헤더 로고 `<Link>` → `<a href="/">` 변경 — 같은 페이지 재클릭 시 초기화됨
+- FAQ JSON-LD 확정: 반드시 화면에 표시된 FAQ와 항목·내용 일치 — 불일치 시 Google rich result 박탈
+  - 홈: JSON-LD 3개 (화면 FAQ 3개와 일치)
+  - bank-account: JSON-LD 6개 (faqItems 8개 중 red 제외한 항목 기준)
+  - swift-code: JSON-LD 6개 (화면 FAQ 6개와 일치)
+- `about` OG type `website`, title에서 "Jusoen" 중복 제거
+- `robots.ts` `/api/` disallow 추가
+- Organization JSON-LD에 `logo: homeicon.png` 추가
+- 페이지 내 텍스트에서 "Google AdSense·애드센스" 문구 전면 제거 (privacy.tsx 법적 고지 제외)
 
 ### 미완료 / 대기 중
 - Google AdSense 신청 (콘텐츠 충분히 쌓인 후 신청 권장)
@@ -123,7 +132,7 @@
 - 새로 추가하는 이미지는 `public/images/`에 넣을 것
 - 이미지 경로는 기존 그대로 유지 (`/og-image.png`, `/homeicon.png`)
 
-## SEO 현황 (2026-05-15 기준)
+## SEO 현황 (2026-05-16 기준)
 
 - 전체 SEO 완료 상태 (title, description, canonical, og, twitter, JSON-LD 전 페이지)
 - 모든 페이지 완성 상태 — 명시적 요청 없이 수정 금지
