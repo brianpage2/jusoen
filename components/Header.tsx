@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import LanguageToggle from './LanguageToggle'
+import ShareButtons from './ShareButtons'
 
 function LogoIcon() {
   return (
@@ -29,6 +30,12 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-[#D0DCE8] sticky top-0 z-50">
+      {/* 공유 버튼 상단 바 */}
+      <div className="border-b border-[#EEF2FA] bg-[#F5F7FA]">
+        <div className="max-w-4xl mx-auto px-4 h-9 flex items-center justify-end">
+          <ShareButtons />
+        </div>
+      </div>
       <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <LogoIcon />
@@ -45,7 +52,9 @@ export default function Header() {
               </Link>
             ))}
           </div>
-          <LanguageToggle />
+          <div className="hidden sm:block">
+            <LanguageToggle />
+          </div>
           {/* 햄버거 버튼 */}
           <button
             onClick={() => setOpen(v => !v)}
