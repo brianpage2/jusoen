@@ -75,7 +75,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
   const engAddr = juso.engResult?.roadAddr ?? juso.engAddr
 
   return (
-    <div className="bg-white border border-[#E2E8F0] rounded-lg overflow-hidden flex">
+    <div className="bg-white border border-[#E2E8F0] rounded-lg [overflow:clip] flex">
       {/* 번호 - 전체 높이 */}
       <span className="text-base font-bold text-[#1B2B6E] w-7 shrink-0 flex items-start justify-center pt-4 border-r border-[#E2E8F0]">{index + 1}</span>
 
@@ -205,7 +205,7 @@ export default function ResultCard({ juso, form, index }: ResultCardProps) {
               </div>
             </div>
             {showAddrGuide && (
-              <div className="ml-32 bg-[#F5F7FA] rounded-lg p-4 space-y-4 border border-[#E2E8F0]">
+              <div className="sm:ml-32 bg-[#F5F7FA] rounded-lg p-4 space-y-4 border border-[#E2E8F0]">
                 <p className="text-xs font-semibold text-[#1A1A1A]">상세주소(동,층,호)를 포함한 영문 우편주소 표기방법 안내</p>
                 {addrLineGuide.map(({ label, rows }) => (
                   <div key={label} className="flex gap-3">

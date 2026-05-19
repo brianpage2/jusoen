@@ -20,11 +20,13 @@ export default function MapSection({ admCd, rnMgtSn, udrtYn, buldMnnm, buldSlno 
           지도 보기
         </p>
       </div>
-      <iframe
-        src={`/map?${params}`}
-        style={{ width: '100%', height: '400px', border: 'none', display: 'block' }}
-        title="지도"
-      />
+      <div style={{ overflowX: 'auto' }}>
+        <iframe
+          src={`/map?${params}`}
+          style={{ width: '100%', minWidth: '600px', height: '400px', border: 'none', display: 'block' }}
+          title="지도"
+        />
+      </div>
     </div>
   )
 }
